@@ -5,8 +5,8 @@ import json
 import glob
 from PIL import Image, ImageDraw
 
-plate_diameter = 30 #cm
-plate_depth = 2.5 #cm
+plate_diameter = 13.5 #cm
+plate_depth = 3.3 #cm
 plate_thickness = 0.2 #cm
 
 def Max(x, y):
@@ -74,7 +74,7 @@ def cal_volume(points, img, len_per_pix, depth_per_pix, lowest):
 def get_volume(img, json_path):
     lowest = np.max(img)
     vol_dict = {}
-    print(lowest)
+    #print(lowest)
     len_per_pix = 0.0
     depth_per_pix = 0.0
     with open(json_path, 'r') as json_file:

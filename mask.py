@@ -3,7 +3,8 @@ import numpy as np
 import json
 from PIL import Image, ImageDraw
 
-color = {"rice":[255,0,255],"vegetable":[255,255,0],"chicken":[0,255,255]}
+#color = {"rice":[255,0,255],"vegetable":[255,255,0],"chicken":[0,255,255]}
+color = {"rice":[255,0,255]}
 
 def polygons_to_mask(img_shape, polygons):
     mask = np.zeros(img_shape, dtype=np.uint8)

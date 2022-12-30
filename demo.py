@@ -15,9 +15,9 @@ import matplotlib.image
 import matplotlib.pyplot as plt
 
 parser = argparse.ArgumentParser(description='KD-network')
-parser.add_argument('--img', metavar='DIR',default="./input/test.jpg",
+parser.add_argument('--img', metavar='DIR',default="./input/rice.jpg",
                     help='img to input')
-parser.add_argument('--json', metavar='DIR',default="./input/test.json",
+parser.add_argument('--json', metavar='DIR',default="./input/rice(2).json",
                     help='json file to input')
 parser.add_argument('--output', metavar='DIR',default="./output",
                     help='dir to output')
@@ -71,11 +71,11 @@ def test(nyu2_loader, model, width, height):
         out_grey = cv2.imread(os.path.join(args.output, "out_grey.png"),0)
         out_color = cv2.applyColorMap(out_grey, cv2.COLORMAP_JET)
         cv2.imwrite(os.path.join(args.output, "out_color.png"),out_color)
-        print("Before Volume...")
+        #print("Before Volume...")
         vol = get_volume(out_grey, args.json)
-        print("Volume:")
+        print("\nVolume result :",end="")
         print(vol)
-        print("unit: cm^3")
+        print("unit: cm^3\n")
         out_file = open(os.path.join(args.output, "out.txt"), "w")
         out_file.write("Volume:\n")
         out_file.write(str(vol))
